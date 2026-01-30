@@ -1,8 +1,55 @@
 import axios from 'axios'
 const consultarTodos = async () => {
-    const data = await axios.get(`http://localhost:8081/matricula/api/v1.0/estudiantes`).then(r=>r.data)
+    const data = await axios.get(`http://localhost:8081/matricula/api/v1.0/estudiantes`).then(r => r.data)
     return data
 }
-export async function consumirApiFacade(){
+const consultarPorId = async (id) => {
+    const data = await axios.get(`http://localhost:8081/matricula/api/v1.0/estudiantes/${id}`).then(r => r.data)
+    return data
+}
+const guardar = async (body) => {
+    //data es lo que recibe desde el body
+    /*const objeto ={
+        nombre: 'Edison',
+        apellido:'Cayambe'
+    }*/
+    const data = await axios.post(`http://localhost:8081/matricula/api/v1.0/estudiantes`, body).then(r => r.data);
+    console.log(data)
+    return data;
+}
+const actualizar = async (id,body) => {
+    const data = await axios.put(`http://localhost:8081/matricula/api/v1.0/estudiantes/${id}`, body).then(r => r.data);
+    console.log(data)
+    return data;
+}
+const actualizarParcial = async (id,body) => {
+    const data = await axios.patch(`http://localhost:8081/matricula/api/v1.0/estudiantes/${id}`, body).then(r => r.data);
+    console.log(data)
+    return data;
+}
+const borrar =(id)=>{
+    axios.delete(`http://localhost:8081/matricula/api/v1.0/estudiantes/${id}`).then(r=>r.data);
+}
+
+export async function consultarTodosFacade() {
     return await consultarTodos()
+}
+//----------------borrar fachada
+export const consultarTodosFachada = async () => {
+    return await consultarTodos();
+}
+export  const consultarPorIdFachada = async (id) => {
+    return await consultarPorId(id);
+}
+export const guardarFachada =async  (body) => {
+    return await guardar(body);
+}
+export  const actualizarFachada =async  (id,body) => {
+    return await actualizar(id,body);
+}
+export const actualizarParcialFachada = async (id,body) => {
+    return await actualizarParcial(id, body);
+}
+export const borrarFachada = async (id)=>{
+    borrar(id);
 }
