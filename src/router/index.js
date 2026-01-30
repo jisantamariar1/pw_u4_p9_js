@@ -25,7 +25,35 @@ const routes = [
     path:'/consultar',
     name: 'consultar',
     component: () => import('../views/ConsultarTodosView.vue')
+  },
+  {
+    path: '/consultarId',
+    name: 'consultarId',
+    component: () => import('../views/ConsultarPorIdView.vue')
+  },
+  {
+    path: '/guardar',
+    name: 'guardar',
+    component: () => import('../views/GuardarView.vue')
+  },
+  {
+    path: '/borrar',
+    name: 'borrar',
+    component: () => import('../views/BorrarView.vue')
+  },
+  {
+    path: '/actualizar',
+    name: 'actualizar',
+    component: () => import('../views/ActualizarView.vue')
+  },
+  {
+    path: '/actualizarParcial',
+    name: 'actualizarParcial',
+    component: () => import('../views/ActualizarParcialView.vue')
   }
+
+  
+
   
 ]
 

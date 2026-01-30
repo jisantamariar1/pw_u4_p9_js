@@ -3,7 +3,12 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>|
     <router-link to="/matricula">Matricula</router-link>|
-    <router-link to="/consultar">Consultar Todos</router-link>
+    <router-link to="/consultar">Consultar Todos</router-link>|
+    <router-link to="/consultarId">Consultar ID</router-link>|
+    <router-link to="/guardar">Guardar</router-link>|
+    <router-link to="/borrar">Borrar</router-link>|
+    <router-link to="/actualizar">Actualziar</router-link>|
+    <router-link to="/actualizarParcial">Actualizar Parcial</router-link>|
   </nav>
   <router-view/>
 </template>
