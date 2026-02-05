@@ -5,7 +5,7 @@
     <router-link to="/consultarId">Consultar ID</router-link>|
     <router-link to="/guardar">Guardar</router-link>|
     <router-link to="/borrar">Borrar</router-link>|
-    <router-link to="/actualizar">Actualziar</router-link>|
+    <router-link to="/actualizar">Actualizar</router-link>|
     <router-link to="/actualizarParcial">Actualizar Parcial</router-link>|
   </nav>
   <router-view />
