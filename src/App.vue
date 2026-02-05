@@ -10,9 +10,21 @@
     <router-link to="/actualizar">Actualziar</router-link>|
     <router-link to="/actualizarParcial">Actualizar Parcial</router-link>|
   </nav>
-  <router-view/>
+  <router-view />
 </template>
+<script>
 
+import { ObtenerTokenFachada } from './clients/AutorizacionClient.js'
+
+export default {
+  async mounted() {
+    const tokenData = await ObtenerTokenFachada()
+    localStorage.setItem('token', tokenData.token)  // <-- CORRECTO
+    console.log('Token guardado para la sesión:', tokenData.token)
+  }
+}
+
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
