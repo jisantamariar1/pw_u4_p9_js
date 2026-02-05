@@ -1,8 +1,6 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>|
-    <router-link to="/matricula">Matricula</router-link>|
     <router-link to="/consultar">Consultar Todos</router-link>|
     <router-link to="/consultarId">Consultar ID</router-link>|
     <router-link to="/guardar">Guardar</router-link>|
@@ -19,8 +17,8 @@ import { ObtenerTokenFachada } from './clients/AutorizacionClient.js'
 export default {
   async mounted() {
     const tokenData = await ObtenerTokenFachada()
-    localStorage.setItem('token', tokenData.token)  // <-- CORRECTO
-    console.log('Token guardado para la sesión:', tokenData.token)
+    localStorage.setItem('token', tokenData.accessToken)  
+    console.log('Token guardado para la sesión:', tokenData.accessToken)
   }
 }
 
