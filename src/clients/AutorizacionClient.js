@@ -1,8 +1,8 @@
 import axios from 'axios'
-const Obtenertoken = async () => {
-    const data = await axios.get(`http://localhost:8082/api/v1.0/auth/token?user=Camila&password=1234`).then(r => r.data)
+const Obtenertoken = async (user,password) => {
+    const data = await axios.get(`http://localhost:8082/api/v1.0/auth/token?user=${user}&password=${password}`).then(r => r.data)
     return data
 }
-export const ObtenerTokenFachada = async () => {
-    return await Obtenertoken()
+export const ObtenerTokenFachada = async (user, password) => {
+    return await Obtenertoken(user, password)
 }

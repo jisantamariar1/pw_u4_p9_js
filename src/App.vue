@@ -17,9 +17,6 @@ import { ObtenerTokenFachada } from './clients/AutorizacionClient.js'
 
 export default {
   async mounted() {
-    const tokenData = await ObtenerTokenFachada()
-    localStorage.setItem('token', tokenData.accessToken)  
-    console.log('Token guardado para la sesión:', tokenData.accessToken)
     localStorage.clear();
 
   }
