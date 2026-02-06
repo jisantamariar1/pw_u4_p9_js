@@ -7,6 +7,7 @@
     <router-link to="/borrar">Borrar</router-link>|
     <router-link to="/actualizar">Actualizar</router-link>|
     <router-link to="/actualizarParcial">Actualizar Parcial</router-link>|
+    <router-link to="/login">Login</router-link>
   </nav>
   <router-view />
 </template>
@@ -19,6 +20,8 @@ export default {
     const tokenData = await ObtenerTokenFachada()
     localStorage.setItem('token', tokenData.accessToken)  
     console.log('Token guardado para la sesión:', tokenData.accessToken)
+    localStorage.clear();
+
   }
 }
 
